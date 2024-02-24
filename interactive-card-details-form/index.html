@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <div class="banner">
+      <!-- <img alt="banner" src=".\images\bg-main-desktop.png" /> -->
+      <div class="card1-wrapper">
+        <div class="card1">
+          <div class="cell1"> <img src=".\images\card-logo.svg" alt="logo" /> </div>
+          <div id="d-cn" class="cell2"> 0000 0000 0000 0000 </div>
+          <div id="d-name" class="cell3"> Jane Appleseed </div>
+          <div id="d-date" class="cell4">
+            <div>
+              <div id="d-mm">00</div>/<div id="d-yy">00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card2">
+        <div id="d-cvv" >000</div>
+      </div>
+    </div>
+    <div class="main-section">
+      <div id="f-wrap" class="form-wrapper">
+        <form id="f-ctrl">
+          <label name="name" for="i-name">Cardholder Name</label>
+          <input id="i-name" placeholder="e.g. Jane Appleseed"><span></span></input>
+          <span id="e-name" class="error hidden">Can't be blank</span>
+          <label name="cn" for="i-cn">Card Number</label>
+          <input id="i-cn" placeholder="e.g. 1234 5678 9123 0000" />
+          <span id="e-cn" class="error hidden">Can't be blank</span>
+          <div class="label-group">
+            <label name="date" for="date">Exp. Date (MM/YY)</label>
+            <label name="cvv" for="i-cvv">CVC</label>
+          </div>
+          <div class="input-group">
+            <div id="date" class="date-group">
+              <input id="i-mm" name="date-m" placeholder="MM" maxlength="2" pattern="[0-9]{2}" />
+              <input id="i-yy" name="date-y" placeholder="YY" maxlength="2" pattern="[0-9]{2}" />
+            </div>
+            <input id="i-cvv" placeholder="e.g. 123" maxlength="3" min="0" max="999" pattern="[0-9]{3}" />
+          </div>
+          <div class="e-input-group">
+            <span id="e-date" for="date-m" class="error hidden">Can't be blank</span>
+            <span id="e-cvv" for="cvv" class="error hidden">Can't be blank</span>
+          </div>
+          <button onclick="handleSubmit()" type="button">Confirm</button>
+        </form>
+      </div>
+      <!-- Completed state start -->
+      <div id="c-wrap" class="complete hidden">
+        <img src=".\images\icon-complete.svg" alt="ok" />
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button onclick="handleContinue()">Continue</button>
+      </div>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Abhishek Bisht</a>.
+      </div>
+    </div>
+  </main>
+
+
+</body>
+
+</html>
